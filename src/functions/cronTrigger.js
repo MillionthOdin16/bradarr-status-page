@@ -41,6 +41,10 @@ export async function processCronTrigger(event) {
 
     console.log(`Checking ${monitor.name} ...`)
 
+    if(monitor.method === "WEBHOOK") {
+      continue;
+    }
+
     // Fetch the monitors URL
     const init = {
       method: monitor.method || 'GET',

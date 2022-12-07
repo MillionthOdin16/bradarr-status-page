@@ -1,12 +1,11 @@
-name = "cf-workers-status-page"
+name = "bradarr-status-page"
 workers_dev = true
-account_id = ""
 type = "webpack"
 webpack_config = "node_modules/flareact/webpack"
 compatibility_date = "2022-11-22"
 
 [triggers]
-crons = ["* * * * *"]
+crons = ["*/5 * * * *"]
 
 [site]
 bucket = "out"

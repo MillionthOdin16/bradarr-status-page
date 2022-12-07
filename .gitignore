@@ -134,3 +134,8 @@ worker/
 out/
 package-lock.json
 public/style.css
+.idea/bradarr-status-page.iml
+.idea/modules.xml
+.yarnrc.yml
+yarn.lock
+yarn.lock

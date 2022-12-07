@@ -32,8 +32,9 @@ monitors:
     expectStatus: 200
     linkable: true # allows the title to be a link, default=true
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
+  - id: test-server
+    name: The Test Server
+    description: 'The test description'
     url: 'https://blog.cloudflare.com/'
-    method: GET
-    expectStatus: 200
+    method: WEBHOOK
+    linkable: false # allows the title to be a link, default=true
