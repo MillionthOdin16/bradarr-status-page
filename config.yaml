@@ -15,26 +15,87 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
-
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
-    method: GET
-    expectStatus: 200
-    linkable: true # allows the title to be a link, default=true
-
-  - id: test-server
-    name: The Test Server
-    description: 'The test description\n\nThis is a new line'
+  - id: mc.bradarr.com
+    name: Main Server (mc.bradarr.com:25565)
+    description: 'Vanilla 1.19.2'
     url: 'https://blog.cloudflare.com/'
     method: WEBHOOK
     linkable: false # allows the title to be a link, default=true
+
+  - id: bedrock.bradarr.com
+    name: Main Server Bedrock Compatible (bedrock.bradarr.com:25565)
+    description: 'Vanilla 1.19.2'
+    url: 'https://blog.cloudflare.com/'
+    method: WEBHOOK
+    linkable: false # allows the title to be a link, default=true
+
+  - id: slimefun.bradarr.com
+    name: Slimefun Server (slimefun.bradarr.com:25565)
+    description: 'Vanilla 1.19.2'
+    url: 'https://blog.cloudflare.com/'
+    method: WEBHOOK
+    linkable: false # allows the title to be a link, default=true
+
+  - id: farmvalley.bradarr.com
+    name: Farming Valley Server [Modded] (farmvalley.bradarr.com:25570)
+    description: 'Farming Valley 1.0.8'
+    url: 'https://blog.cloudflare.com/'
+    method: WEBHOOK
+    linkable: false # allows the title to be a link, default=true
+
+  - id: pixelmon.bradarr.com
+    name: Pixelmon Server [Modded] (pixelmon.bradarr.com:25572)
+    description: 'Pixelmon 9.0.11'
+    url: 'https://blog.cloudflare.com/'
+    method: WEBHOOK
+    linkable: false # allows the title to be a link, default=true
+
+  - id: Oracle-Micro-2-Waterfall
+    name: Waterfall Proxy 2
+    url: 'https://blog.cloudflare.com/'
+    method: WEBHOOK
+    linkable: false # allows the title to be a link, default=true
+
+  - id: Oracle-Micro-1-Waterfall
+    name: Waterfall Proxy 1
+    url: 'https://blog.cloudflare.com/'
+    method: WEBHOOK
+    linkable: false # allows the title to be a link, default=true
+
+  - id: bradarr.apexmc.co
+    name: Apex Proxy Main (bradarr.apexmc.co:25690)
+    description: 'Vanilla 1.19.2'
+    url: 'https://blog.cloudflare.com/'
+    method: WEBHOOK
+    linkable: false # allows the title to be a link, default=true
+
+  - id: bradarr2.apexmc.co
+    name: Apex Proxy Backup (bradarr2.apexmc.co:25774)
+    description: 'Vanilla 1.19.2'
+    url: 'https://blog.cloudflare.com/'
+    method: WEBHOOK
+    linkable: false # allows the title to be a link, default=true
+
+  - id: LocalReverseProxy
+    name: General Reverse Proxy
+    url: 'https://blog.cloudflare.com/'
+    method: WEBHOOK
+    linkable: false # allows the title to be a link, default=true
+
+  - id: bradarr-website # unique identifier
+    name: www.bradarr.com
+    description: 'Bradarr Main Site' # default=empty
+    url: 'https://www.bradarr.com/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: true # allows the title to be a link, default=true
+
+  - id: bradarr-status-page # unique identifier
+    name: status.bradarr.com
+    description: 'Bradarr Status Page' # default=empty
+    url: 'https://status.bradarr.com/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: true # allows the title to be a link, default=true

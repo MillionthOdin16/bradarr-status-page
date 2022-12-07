@@ -29,6 +29,7 @@ const alertIcon = (
         <path
             d="M9.487 13.064c-0.588 -3.57 -0.882 -5.496 -0.882 -5.779 0 -0.344 0.114 -0.622 0.342 -0.834 0.228 -0.212 0.485 -0.318 0.772 -0.318 0.31 0 0.572 0.113 0.786 0.339s0.321 0.492 0.321 0.798c0 0.292 -0.298 2.223 -0.893 5.793h-0.446zm1.205 1.704c0 0.272 -0.096 0.505 -0.289 0.697 -0.193 0.192 -0.422 0.289 -0.69 0.289 -0.272 0 -0.505 -0.096 -0.697 -0.289 -0.193 -0.193 -0.289 -0.425 -0.289 -0.697 0 -0.268 0.096 -0.497 0.289 -0.69s0.425 -0.289 0.697 -0.289c0.268 0 0.497 0.096 0.69 0.289s0.289 0.422 0.289 0.689z"/></svg>
 )
+
 export default function MonitorCard({ key, monitor, data }) {
   return (
     <div key={key} className="card">
@@ -55,7 +56,6 @@ export default function MonitorCard({ key, monitor, data }) {
               </span>
             )
           }
-
         </div>
           {!monitor.lastCheck.operational && (
               <div className="tooltip">
@@ -68,7 +68,6 @@ export default function MonitorCard({ key, monitor, data }) {
         <MonitorStatusLabel kvMonitor={data} />
       </div>
         <MonitorHistogram monitorId={monitor.id} kvMonitor={data}/>
-
       <div className="flex flex-row justify-between items-center text-gray-400 text-sm">
         <div>{config.settings.daysInHistogram} days ago</div>
         <div>Today</div>

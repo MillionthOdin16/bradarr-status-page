@@ -30,9 +30,6 @@ export async function processWebhook(event) {
 
   // Get the monitor that corresponds to the webhook
   const json = await event.request.json()
-  console.log(json)
-  console.log(json.text)
-  console.log(json.data)
   // Ignore webhook test notification upon creation
   if ((json.text || "").includes("Hello World!")) return
 
