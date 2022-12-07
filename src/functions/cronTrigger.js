@@ -42,7 +42,7 @@ export async function processCronTrigger(event) {
     console.log(`Checking ${monitor.name} ...`)
 
     if(monitor.method === "WEBHOOK") {
-      if(monitor.status !== "Healthy") {
+      if(monitor.lastCheck.status !== 200) {
         monitorsState.monitors[monitor.id].lastCheck.operational = false
         monitorsState.lastUpdate.allOperational = false
         monitorsState.monitors[monitor.id].checks[checkDay].fails++

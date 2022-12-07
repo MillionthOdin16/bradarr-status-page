@@ -65,7 +65,7 @@ export async function processWebhook(event) {
 
     // Save monitor's last check response status
     monitorsState.monitors[monitor.id].lastCheck = {
-      status: incomingMonitorDetails.status,
+      status: monitorOperational ? 200 : 500,
       statusText: incomingMonitorDetails.failureReason,
       operational: monitorOperational,
     }

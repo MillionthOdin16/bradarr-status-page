@@ -1,14 +1,14 @@
 settings:
-  title: 'Status Page'
+  title: 'Server Status Page'
   url: 'https://status.bradarr.com' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 30 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
-  allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
-  monitorLabelOperational: 'Operational'
-  monitorLabelNotOperational: 'Not Operational'
+  allmonitorsOperational: 'All Servers Operational'
+  notAllmonitorsOperational: 'Some Servers Not Operational'
+  monitorLabelOperational: 'Healthy'
+  monitorLabelNotOperational: 'Not Healthy'
   monitorLabelNoData: 'No data'
   dayInHistogramNoData: 'No data'
   dayInHistogramOperational: 'All good'

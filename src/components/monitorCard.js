@@ -57,17 +57,16 @@ export default function MonitorCard({ key, monitor, data }) {
           }
 
         </div>
-          {!monitor.lastCheck.operational && ({alertIcon})}
+          {!monitor.lastCheck.operational && (
+              <div className="tooltip">
+                  {alertIcon}
+                  <div className="content text-center transform -translate-y-1/2 top-1/2 ml-8 w-72 text-sm object-left">
+                      {monitor.lastCheck.statusText}
+                  </div>
+              </div>
+          )}
         <MonitorStatusLabel kvMonitor={data} />
       </div>
-        {!monitor.lastCheck.operational && (
-            <div className="tooltip">
-                {alertIcon}
-                <div className="content text-center transform -translate-y-1/2 top-1/2 ml-8 w-72 text-sm object-left">
-                    {monitor.lastCheck.statusText}
-                </div>
-            </div>
-        )}
         <MonitorHistogram monitorId={monitor.id} kvMonitor={data}/>
 
       <div className="flex flex-row justify-between items-center text-gray-400 text-sm">
