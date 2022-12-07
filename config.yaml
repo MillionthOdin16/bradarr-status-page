@@ -88,7 +88,7 @@ monitors:
     url: 'https://www.bradarr.com/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
+    followRedirect: true # should fetch follow redirects, default=false
     linkable: true # allows the title to be a link, default=true
 
   - id: bradarr-status-page # unique identifier
@@ -97,5 +97,5 @@ monitors:
     url: 'https://status.bradarr.com/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
+    followRedirect: true # should fetch follow redirects, default=false
     linkable: true # allows the title to be a link, default=true
