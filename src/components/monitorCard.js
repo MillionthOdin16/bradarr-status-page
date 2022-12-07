@@ -57,14 +57,14 @@ export default function MonitorCard({ key, monitor, data }) {
             )
           }
         </div>
-          {!monitor.lastCheck.operational && (
+{/*          {!monitor.lastCheck.operational && (
               <div className="tooltip">
                   {infoIcon}
                   <div className="content text-center transform -translate-y-1/2 top-1/2 ml-8 w-72 text-sm object-left">
                       {monitor.lastCheck.statusText}
                   </div>
               </div>
-          )}
+          )}*/}
         <MonitorStatusLabel kvMonitor={data} />
       </div>
         <MonitorHistogram monitorId={monitor.id} kvMonitor={data}/>
