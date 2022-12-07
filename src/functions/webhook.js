@@ -29,7 +29,7 @@ export async function processWebhook(event) {
   //monitorsState.lastUpdate.allOperational = true
 
   // Get the monitor that corresponds to the webhook
-  const json = event.request.json()
+  const json = await event.request.json()
   console.log(json)
   console.log(json.text)
   console.log(json.data)
