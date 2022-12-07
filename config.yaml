@@ -15,6 +15,15 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
+  - id: bradarr-website # unique identifier
+    name: www.bradarr.com
+    description: 'Bradarr Main Site' # default=empty
+    url: 'https://www.bradarr.com/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: true # allows the title to be a link, default=true
+    
   - id: mc.bradarr.com
     name: Main Server (mc.bradarr.com:25565)
     description: 'Vanilla 1.19.2'
@@ -81,21 +90,3 @@ monitors:
     url: 'https://blog.cloudflare.com/'
     method: WEBHOOK
     linkable: false # allows the title to be a link, default=true
-
-  - id: bradarr-website # unique identifier
-    name: www.bradarr.com
-    description: 'Bradarr Main Site' # default=empty
-    url: 'https://www.bradarr.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: true # should fetch follow redirects, default=false
-    linkable: true # allows the title to be a link, default=true
-
-  - id: bradarr-status-page # unique identifier
-    name: status.bradarr.com
-    description: 'Bradarr Status Page' # default=empty
-    url: 'https://status.bradarr.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: true # should fetch follow redirects, default=false
-    linkable: true # allows the title to be a link, default=true
