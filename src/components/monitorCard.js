@@ -17,7 +17,7 @@ const infoIcon = (
   </svg>
 )
 
-const alertIcon = (
+/*const alertIcon = (
     <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 20 19.33" width="20" height="19.33"><radialGradient id="a" gradientUnits="userSpaceOnUse" cy="393.79" cx="216.7" r="296.7"><stop stop-color="#F4D708" offset="0"/><stop
         stop-color="#FCB400" offset="1"/></radialGradient>
         <path
@@ -28,7 +28,7 @@ const alertIcon = (
               fill="none"/>
         <path
             d="M9.487 13.064c-0.588 -3.57 -0.882 -5.496 -0.882 -5.779 0 -0.344 0.114 -0.622 0.342 -0.834 0.228 -0.212 0.485 -0.318 0.772 -0.318 0.31 0 0.572 0.113 0.786 0.339s0.321 0.492 0.321 0.798c0 0.292 -0.298 2.223 -0.893 5.793h-0.446zm1.205 1.704c0 0.272 -0.096 0.505 -0.289 0.697 -0.193 0.192 -0.422 0.289 -0.69 0.289 -0.272 0 -0.505 -0.096 -0.697 -0.289 -0.193 -0.193 -0.289 -0.425 -0.289 -0.697 0 -0.268 0.096 -0.497 0.289 -0.69s0.425 -0.289 0.697 -0.289c0.268 0 0.497 0.096 0.69 0.289s0.289 0.422 0.289 0.689z"/></svg>
-)
+)*/
 
 export default function MonitorCard({ key, monitor, data }) {
   return (
@@ -59,7 +59,7 @@ export default function MonitorCard({ key, monitor, data }) {
         </div>
           {!monitor.lastCheck.operational && (
               <div className="tooltip">
-                  {alertIcon}
+                  {infoIcon}
                   <div className="content text-center transform -translate-y-1/2 top-1/2 ml-8 w-72 text-sm object-left">
                       {monitor.lastCheck.statusText}
                   </div>
