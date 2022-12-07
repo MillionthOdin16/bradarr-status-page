@@ -29,10 +29,12 @@ export async function processWebhook(event) {
   //monitorsState.lastUpdate.allOperational = true
 
   // Get the monitor that corresponds to the webhook
-  const json = event.request.json();
-
+  const json = event.request.json()
+  console.log(json)
+  console.log(json.text)
+  console.log(json.data)
   // Ignore webhook test notification upon creation
-  if ((json.text || "").includes("Hello World!")) return;
+  if ((json.text || "").includes("Hello World!")) return
 
   let incomingMonitorID = json.data?.name || "Unknown"
   let incomingMonitorDetails = {
@@ -58,9 +60,8 @@ export async function processWebhook(event) {
     }
 
     // Determine whether operational and status changed
-    const monitorOperational =
-        incomingMonitorDetails.status === ("Healthy");
-    const monitorStatusChanged = true;
+    const monitorOperational = incomingMonitorDetails.status === "Healthy"
+    const monitorStatusChanged = true
 
     // Save monitor's last check response status
     monitorsState.monitors[monitor.id].lastCheck = {
