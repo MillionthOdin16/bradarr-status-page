@@ -56,15 +56,34 @@ export async function processWebhook(event) {
       continue;
     }
 
+    if(monitor.offline){
+      monitorsState.monitors[monitor.id].lastCheck.offline = true
+      continue;
+    }
+
     // Determine whether operational and status changed
     const monitorOperational = incomingMonitorDetails.status === "Healthy"
     const monitorStatusChanged = true
+
+    // make sure checkDay exists in checks in cases when needed
+    if (!monitorsState.monitors[monitor.id].checks.hasOwnProperty(checkDay)
+    ) {
+      monitorsState.monitors[monitor.id].checks[checkDay] = {
+        fails: 0,
+        res: {},
+      }
+    }
+    // Increment failed checks on status change or first fail of the day (maybe call it .incidents instead?)
+    if (monitorStatusChanged || monitorsState.monitors[monitor.id].checks[checkDay].fails == 0) {
+      monitorsState.monitors[monitor.id].checks[checkDay].fails++
+    }
 
     // Save monitor's last check response status
     monitorsState.monitors[monitor.id].lastCheck = {
       status: monitorOperational ? 200 : 500,
       statusText: incomingMonitorDetails.failureReason,
       operational: monitorOperational,
+      offline: false,
     }
 
     // Send Slack message on monitor change

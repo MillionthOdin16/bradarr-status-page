@@ -44,8 +44,12 @@ export async function processCronTrigger(event) {
     if(monitor.method === "WEBHOOK") {
       if(monitorsState.monitors[monitor.id].lastCheck.operational === false) {
         monitorsState.monitors[monitor.id].lastCheck.operational = false
+        if(monitor.offline){
+          monitorsState.monitors[monitor.id].lastCheck.offline = true
+          continue;
+        }
         monitorsState.lastUpdate.allOperational = false
-        monitorsState.monitors[monitor.id].checks[checkDay].fails++
+        //monitorsState.monitors[monitor.id].checks[checkDay].fails++
       }
       continue;
     }
@@ -76,6 +80,7 @@ export async function processCronTrigger(event) {
       status: checkResponse.status,
       statusText: checkResponse.statusText,
       operational: monitorOperational,
+      offline: false,
     }
 
     // Send Slack message on monitor change
