@@ -19,18 +19,24 @@ export default function MonitorHistogram({ monitorId, kvMonitor }) {
         let dayInHistogramLabel = config.settings.dayInHistogramNoData
 
         // filter all dates before first check, then check the rest
-        if (kvMonitor && kvMonitor.firstCheck <= dayInHistogram) {
-          if (
-            kvMonitor.checks.hasOwnProperty(dayInHistogram) &&
-            kvMonitor.checks[dayInHistogram].fails > 0
-          ) {
-            bg = 'yellow'
-            dayInHistogramLabel = `${kvMonitor.checks[dayInHistogram].fails} ${config.settings.dayInHistogramNotOperational}`
-          } else {
-            bg = 'green'
-            dayInHistogramLabel = config.settings.dayInHistogramOperational
+          if (kvMonitor && kvMonitor.firstCheck <= dayInHistogram) {
+              if (
+                  kvMonitor.checks.hasOwnProperty(dayInHistogram) &&
+                  kvMonitor.lastCheck.offline === true
+              ) {
+                  bg = 'gray'
+                  dayInHistogramLabel = `${config.settings.dayInHistogramOffline}`
+              } else if (
+                  kvMonitor.checks.hasOwnProperty(dayInHistogram) &&
+                  kvMonitor.checks[dayInHistogram].fails > 0
+              ) {
+                  bg = 'yellow'
+                  dayInHistogramLabel = `${kvMonitor.checks[dayInHistogram].fails} ${config.settings.dayInHistogramNotOperational}`
+              } else {
+                  bg = 'green'
+                  dayInHistogramLabel = config.settings.dayInHistogramOperational
+              }
           }
-        }
 
         return (
           <div key={key} className="hitbox tooltip">

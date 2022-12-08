@@ -12,6 +12,7 @@ settings:
   monitorLabelOffline: 'Currently Inactive'
   monitorLabelNoData: 'No data'
   dayInHistogramNoData: 'No data'
+  dayInHistogramOffline: 'Inactive'
   dayInHistogramOperational: 'All good'
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
